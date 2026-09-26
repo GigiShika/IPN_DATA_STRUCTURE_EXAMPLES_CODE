@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CodeFarm++ · Aprende C++</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen">
+<div class="max-w-7xl mx-auto p-4 md:p-6">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-5">
+    <div class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-2xl bg-[var(--accent)] flex items-center justify-center text-2xl">🌾</div>
+      <div>
+        <div class="font-extrabold text-lg leading-none">CodeFarm<span class="text-[var(--accent2)]">++</span></div>
+        <div class="text-xs text-[var(--muted)]">Cultiva tu lógica en C++</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="card2 px-3 py-2 flex items-center gap-2 text-sm"><span>🔥</span><span id="streakLbl">0</span></div>
+      <div class="card2 px-3 py-2 flex items-center gap-2 text-sm"><span>⭐</span><span id="xpLbl">0 XP</span></div>
+      <div class="card2 px-3 py-2 flex items-center gap-2 text-sm"><span>🌱</span><span id="progLbl">0/30</span></div>
+    </div>
+  </div>
+
+  <!-- MAP VIEW -->
+  <div id="mapView">
+    <div class="card p-4 md:p-6 mb-4">
+      <div class="flex items-center gap-2 mb-1"><span class="text-2xl">🟢</span><h2 class="font-bold text-lg">Nivel 1 — Dominar sintaxis</h2></div>
+      <p class="text-sm text-[var(--muted)] mb-4">Variables, sumas, intercambios y tus primeros ciclos <code>for</code>.</p>
+      <div id="tier1" class="flex flex-wrap gap-4"></div>
+    </div>
+    <div class="card p-4 md:p-6 mb-4">
+      <div class="flex items-center gap-2 mb-1"><span class="text-2xl">🟡</span><h2 class="font-bold text-lg">Nivel 2 — Vectores</h2></div>
+      <p class="text-sm text-[var(--muted)] mb-4">Arreglos, copias, y recorridos con <code>for</code>.</p>
+      <div id="tier2" class="flex flex-wrap gap-4"></div>
+    </div>
+    <div class="card p-4 md:p-6">
+      <div class="flex items-center gap-2 mb-1"><span class="text-2xl">🔴</span><h2 class="font-bold text-lg">Nivel 3 — Lógica avanzada</h2></div>
+      <p class="text-sm text-[var(--muted)] mb-4">Máximos, mínimos, inversos, filtros y ordenamiento.</p>
+      <div id="tier3" class="flex flex-wrap gap-4"></div>
+    </div>
+  </div>
+
+  <!-- EXERCISE VIEW -->
+  <div id="exView" class="hidden">
+    <button id="backBtn" class="btn-out mb-4">← Volver al mapa</button>
+    <div class="grid md:grid-cols-5 gap-4">
+      <div class="md:col-span-3 card p-4 flex flex-col gap-3">
+        <div>
+          <div id="exBadge" class="text-xs font-bold inline-block px-2 py-1 rounded-md mb-2"></div>
+          <h3 id="exTitle" class="font-bold text-xl"></h3>
+          <p id="exDesc" class="text-sm text-[var(--muted)] mt-1"></p>
+        </div>
+        <div class="editor-wrap flex">
+          <pre id="highlightLayer" class="editor-layer"><code></code></pre>
+          <textarea id="editor" spellcheck="false" class="editor-layer w-full"></textarea>
+        </div>
+        <div class="flex gap-2 flex-wrap">
+          <button id="runBtn" class="btn">▶ Ejecutar</button>
+          <button id="resetBtn" class="btn-out">↺ Reiniciar código</button>
+        </div>
+        <div>
+          <div class="text-xs font-bold text-[var(--muted)] mb-1">CONSOLA</div>
+          <div id="consoleBox" class="console p-3"></div>
+        </div>
+        <div id="resultBanner" class="hidden p-3 rounded-xl font-semibold text-sm"></div>
+      </div>
+      <div class="md:col-span-2 card p-4 flex flex-col gap-3">
+        <div class="text-xs font-bold text-[var(--muted)]">🚜 GRANJA — refleja en vivo lo que hace tu código</div>
+        <div id="farmBoard" class="flex flex-col gap-3 flex-1 overflow-y-auto max-h-[420px] pr-1"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="js/interpreter.js"></script>
+<script src="js/checkers.js"></script>
+<script src="js/data.js"></script>
+<script src="js/model.js"></script>
+<script src="js/viewmodel.js"></script>
+<script src="js/highlighter.js"></script>
+<script src="js/view.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
